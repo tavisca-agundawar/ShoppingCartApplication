@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShoppingCart
 {
@@ -16,7 +17,7 @@ namespace ShoppingCart
 
             for (int index = 0; index < categories.Length; index++)
             {
-                CategorialDiscount.Add(categories[index], randomValue.NextDouble()*10);
+                CategorialDiscount.Add(categories[index], Math.Round(randomValue.NextDouble()*10,2));
             }
         }
 
@@ -57,11 +58,10 @@ namespace ShoppingCart
         public static void ShowCategorialDiscountValues()
         {
             Display.ShowMessagePretty("Category\t\tDiscount %");
-            var categories = CategorialDiscount.Keys.ToString();
-            var values = CategorialDiscount.Values.ToString();
+            
             for (int i = 0; i < CategorialDiscount.Count; i++)
             {
-                Display.ShowMessage($"{categories[i]}\t\t{values[i]}");
+                Display.ShowMessage($"{CategorialDiscount.Keys.ElementAt(i)}\t\t{CategorialDiscount.Values.ElementAt(i)}");
             }
         }
     }

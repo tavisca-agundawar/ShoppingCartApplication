@@ -1,6 +1,6 @@
 ﻿namespace ShoppingCart
 {
-    public interface IDiscount
+   public interface IDiscount
     {
     }
 }

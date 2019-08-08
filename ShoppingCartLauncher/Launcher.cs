@@ -51,10 +51,13 @@ namespace ShoppingCartLauncher
                                     break;
 
                                 case 4:
+                                    Discount.ShowCategorialDiscountValues();
+                                    break;
+                                case 5:
                                     Products.ShowAllProducts();
                                     break;
 
-                                case 5:
+                                case 6:
                                     exitVendorMenu = true;
                                     break;
 
@@ -100,10 +103,14 @@ namespace ShoppingCartLauncher
                                     break;
 
                                 case 5:
-                                    cart.Checkout();
+                                    Discount.ShowCategorialDiscountValues();
                                     break;
 
                                 case 6:
+                                    cart.Checkout();
+                                    break;
+
+                                case 7:
                                     exitShopperMenu = true;
                                     break;
 
@@ -128,7 +135,7 @@ namespace ShoppingCartLauncher
         public static void ShowMainMenu()
         {
             Display.ShowMessage(Environment.NewLine);
-            Display.ShowMessage("----------------Main Menu----------------");
+            Display.ShowMessagePretty("\t\t Main Menu");
             Display.ShowMessage("Choose an option from the following:");
             Display.ShowMessage("1.Vendor Menu");
             Display.ShowMessage("2.Shopper Menu");
@@ -138,26 +145,28 @@ namespace ShoppingCartLauncher
         public static void ShowVendorMenu()
         {
             Display.ShowMessage(Environment.NewLine);
-            Display.ShowMessage("----------------Vendor Menu----------------");
+            Display.ShowMessagePretty("\t\t Vendor Menu");
             Display.ShowMessage("Choose an option from the following:");
             Display.ShowMessage("1.Add product");
             Display.ShowMessage("2.Set fixed discount");
             Display.ShowMessage("3.Set Category Discount");
-            Display.ShowMessage("4.Show list of products");
-            Display.ShowMessage("5.Return to Main Menu");
+            Display.ShowMessage("4.Show discount per category");
+            Display.ShowMessage("5.Show list of products");
+            Display.ShowMessage("6.Return to Main Menu");
         }
 
         public static void ShowShopperMenu()
         {
             Display.ShowMessage(Environment.NewLine);
-            Display.ShowMessage("----------------Shopper Menu----------------");
+            Display.ShowMessagePretty("\t\t Shopper Menu");
             Display.ShowMessage("Choose an option from the following:");
             Display.ShowMessage("1.View all products");
             Display.ShowMessage("2.Search product by name");
             Display.ShowMessage("3.Add product to cart");
             Display.ShowMessage("4.Remove product from cart");
-            Display.ShowMessage("5.Checkout");
-            Display.ShowMessage("6.Return to Main Menu");
+            Display.ShowMessage("5.Show discount per category");
+            Display.ShowMessage("6.Checkout");
+            Display.ShowMessage("7.Return to Main Menu");
         }
     }
 }

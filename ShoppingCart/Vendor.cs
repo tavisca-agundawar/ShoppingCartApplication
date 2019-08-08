@@ -18,18 +18,18 @@ namespace ShoppingCart
             var categories = Enum.GetNames(typeof(Product.Categories));
 
             Display.ShowMessagePretty("Categories:");
-            for(int index = 1; index <= categories.Length; index++)
+            for(int index = 0; index < categories.Length; index++)
             {
-                Display.ShowMessage($"{index}: {categories[index]}");
+                Display.ShowMessage($"{index+1}: {categories[index]}");
             }
-            return Display.GetInputFromUserPretty("Enter Category Index: ");
+            return Convert.ToString((Convert.ToInt32(Display.GetInputFromUserPretty("Enter Category Index: ")) - 1));
         }
 
         public static void SetCategoryDiscount()
         {
             var categories = Enum.GetNames(typeof(Product.Categories));
             var chosenCategory = GetCategoryFromUser();
-            string chosenCategoryName = Enum.GetName(typeof(Product.Categories), chosenCategory);
+            string chosenCategoryName = Enum.GetName(typeof(Product.Categories), Convert.ToInt32(chosenCategory));
 
             double discount = Convert.ToDouble(Display.GetInputFromUserPretty($"Enter discount percent for {chosenCategoryName}: "));
 

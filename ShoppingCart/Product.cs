@@ -13,7 +13,7 @@ namespace ShoppingCart
 
         public enum Categories
         {
-            Dairy = 1,
+            Dairy,
             Educational,
             Entertainment,
             Apparell,
