@@ -42,14 +42,14 @@ namespace ShoppingCart
             foreach(var product in cartItems)
             {
                 discount = 0;
-                CategorialDiscount.TryGetValue(product.item.Category.ToString(), out discount);
+                CategorialDiscount.TryGetValue(product.Item.Category.ToString(), out discount);
                 if(discount>0)
                 {
-                    netTotal += product.totalCostOfItem - (product.totalCostOfItem * discount / 100);
+                    netTotal += product.TotalCostOfItem - (product.TotalCostOfItem * discount / 100);
                 }
                 else
                 {
-                    netTotal += product.totalCostOfItem;
+                    netTotal += product.TotalCostOfItem;
                 }
             }
             return netTotal;

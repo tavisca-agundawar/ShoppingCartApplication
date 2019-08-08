@@ -26,7 +26,7 @@ namespace ShoppingCart
                     throw new Exception();
 
                 cartItems.Add(new CartItem(product, quantity));
-                Display.ShowMessage($"{cartItems[cartItems.Count - 1].quantity} x {cartItems[cartItems.Count - 1].item.Name} added to cart!");
+                Display.ShowMessage($"{cartItems[cartItems.Count - 1].Quantity} x {cartItems[cartItems.Count - 1].Item.Name} added to cart!");
             }
             catch (Exception)
             {
@@ -44,7 +44,7 @@ namespace ShoppingCart
 
                 for (int i = 0; i < cartItems.Count; i++)
                 {
-                    if(cartItems[i].item.Name == product)
+                    if(cartItems[i].Item.Name == product)
                     {
                         cartItems.RemoveAt(i);
                         Display.ShowMessage($"{product} has been removed.");
@@ -89,7 +89,7 @@ namespace ShoppingCart
                 double total = 0;
                 foreach (var cartItem in cartItems)
                 {
-                    total += cartItem.totalCostOfItem;
+                    total += cartItem.TotalCostOfItem;
                 }
                 return total;
             }
@@ -118,7 +118,7 @@ namespace ShoppingCart
             Display.ShowMessage("--------------------------------------------------------------------");
             foreach (var cartItem in cartItems)
             {
-                Display.ShowMessage($"{cartItem.item.Name}            {cartItem.item.Price}           {cartItem.quantity}            {cartItem.totalCostOfItem}");
+                Display.ShowMessage($"{cartItem.Item.Name}            {cartItem.Item.Price}           {cartItem.Quantity}            {cartItem.TotalCostOfItem}");
             }
         }
     }
