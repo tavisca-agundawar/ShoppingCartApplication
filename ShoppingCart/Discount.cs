@@ -53,5 +53,16 @@ namespace ShoppingCart
             }
             return netTotal;
         }
+
+        public static void ShowCategorialDiscountValues()
+        {
+            Display.ShowMessagePretty("Category\t\tDiscount %");
+            var categories = CategorialDiscount.Keys.ToString();
+            var values = CategorialDiscount.Values.ToString();
+            for (int i = 0; i < CategorialDiscount.Count; i++)
+            {
+                Display.ShowMessage($"{categories[i]}\t\t{values[i]}");
+            }
+        }
     }
 }

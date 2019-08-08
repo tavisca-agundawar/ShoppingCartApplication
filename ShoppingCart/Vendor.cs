@@ -18,9 +18,9 @@ namespace ShoppingCart
             var categories = Enum.GetNames(typeof(Product.Categories));
 
             Display.ShowMessagePretty("Categories:");
-            for(int index = 0; index < categories.Length; index++)
+            for(int index = 1; index <= categories.Length; index++)
             {
-                Display.ShowMessage($"{index + 1}: {categories[index]}");
+                Display.ShowMessage($"{index}: {categories[index]}");
             }
             return Display.GetInputFromUserPretty("Enter Category Index: ");
         }
