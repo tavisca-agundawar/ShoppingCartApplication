@@ -68,7 +68,7 @@ namespace ShoppingCart
 
                 ShowCartValue();
                 Display.ShowMessagePretty("1.Fixed Discount \n2.Categorial Discount");
-                var choice = Display.GetInputFromUserPretty("Enter choice of discount to apply:");
+                var choice = Display.GetInputFromUser("Enter choice of discount to apply:");
                 switch (choice)
                 {
                     case "1":
@@ -88,7 +88,7 @@ namespace ShoppingCart
                 Display.ShowMessagePretty("Sorry but the following products are no longer available.");
                 for (int i = 0; i < unavailableProducts.Count; i++)
                 {
-                    Display.ShowMessage($"{unavailableProducts[i].Name}");
+                    Display.ShowMessage($"Product name: {unavailableProducts[i].Name}");
                 }
                 Display.ShowMessagePretty("\nPlease remove them and try checkout again.");
             }

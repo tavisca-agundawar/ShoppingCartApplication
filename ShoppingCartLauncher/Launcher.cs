@@ -41,7 +41,6 @@ namespace ShoppingCartLauncher
                                     break;
                                 case 2:
                                     Vendor.RemoveProduct();
-                                    Display.ShowMessage("Discount Set!");
                                     break;
 
                                 case 3:
