@@ -1,0 +1,10 @@
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCartLauncher\bin\Debug\ShoppingCartLauncher.exe.config
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCartLauncher\bin\Debug\ShoppingCartLauncher.exe
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCartLauncher\bin\Debug\ShoppingCartLauncher.pdb
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCartLauncher\bin\Debug\ShoppingCart.dll
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCartLauncher\bin\Debug\ShoppingCart.pdb
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCartLauncher\obj\Debug\ShoppingCartLauncher.csprojAssemblyReference.cache
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCartLauncher\obj\Debug\ShoppingCartLauncher.csproj.CoreCompileInputs.cache
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCartLauncher\obj\Debug\ShoppingCartLauncher.csproj.CopyComplete
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCartLauncher\obj\Debug\ShoppingCartLauncher.exe
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCartLauncher\obj\Debug\ShoppingCartLauncher.pdb

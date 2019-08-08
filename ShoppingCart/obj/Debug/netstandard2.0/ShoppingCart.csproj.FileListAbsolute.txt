@@ -1,0 +1,9 @@
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCart\bin\Debug\netstandard2.0\ShoppingCart.deps.json
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCart\bin\Debug\netstandard2.0\ShoppingCart.dll
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCart\bin\Debug\netstandard2.0\ShoppingCart.pdb
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.csprojAssemblyReference.cache
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.csproj.CoreCompileInputs.cache
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.AssemblyInfoInputs.cache
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.AssemblyInfo.cs
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.dll
+C:\Users\agundawar\source\repos\ShoppingCart\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.pdb
