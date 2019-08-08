@@ -5,8 +5,6 @@ namespace ShoppingCart
 {
     public class Cart
     {
-        //public static double discountPercentage = 5;
-
         public List<CartItem> cartItems = new List<CartItem>();
         private double _baseCartValue;
         private double _cartDiscountedValue;
@@ -61,25 +59,70 @@ namespace ShoppingCart
 
         public void Checkout()
         {
-            _baseCartValue = GetTotalAmount();
-            _cartDiscountedValue = Discount.GetTotalAmountAfterCartDiscount(_baseCartValue);
-            _categorialDiscountedValue = Discount.GetTotalAmountAfterCategorialDiscount(cartItems);
 
-            ShowCartValue();
-            Display.ShowMessagePretty("1.Fixed Discount \n2.Categorial Discount");
-            var choice = Display.GetInputFromUserPretty("Enter choice of discount to apply:");
-            switch (choice)
+            if (CheckCartIsValid())
             {
-                case "1":
-                    Display.ShowMessagePretty($"GRAND TOTAL: {_cartDiscountedValue}");
-                    break;
-                case "2":
-                    Display.ShowMessagePretty($"GRAND TOTAL: {_categorialDiscountedValue}");
-                    break;
-                default:
-                    Display.ShowMessagePretty("Error! Invalid input.");
-                    break;
+                _baseCartValue = GetTotalAmount();
+                _cartDiscountedValue = Discount.GetTotalAmountAfterCartDiscount(_baseCartValue);
+                _categorialDiscountedValue = Discount.GetTotalAmountAfterCategorialDiscount(cartItems);
+
+                ShowCartValue();
+                Display.ShowMessagePretty("1.Fixed Discount \n2.Categorial Discount");
+                var choice = Display.GetInputFromUserPretty("Enter choice of discount to apply:");
+                switch (choice)
+                {
+                    case "1":
+                        Display.ShowMessagePretty($"GRAND TOTAL: {_cartDiscountedValue}");
+                        break;
+                    case "2":
+                        Display.ShowMessagePretty($"GRAND TOTAL: {_categorialDiscountedValue}");
+                        break;
+                    default:
+                        Display.ShowMessagePretty("Error! Invalid input.");
+                        break;
+                }
             }
+            else
+            {
+                List<Product> unavailableProducts = GetUnavailableProducts();
+                Display.ShowMessagePretty("Sorry but the following products are no longer available.");
+                for (int i = 0; i < unavailableProducts.Count; i++)
+                {
+                    Display.ShowMessage($"{unavailableProducts[i].Name}");
+                }
+                Display.ShowMessagePretty("\nPlease remove them and try checkout again.");
+            }
+        }
+
+        private List<Product> GetUnavailableProducts()
+        {
+            var productList = Products.GetProductList();
+            List<Product> unavailableProducts = new List<Product>();
+
+            for (int i = 0; i < cartItems.Count; i++)
+            {
+                if (!productList.Contains(cartItems[i].Item))
+                {
+                    unavailableProducts.Add(cartItems[i].Item);
+                }
+            }
+
+            return unavailableProducts;
+        }
+
+        private bool CheckCartIsValid()
+        {
+            var productList = Products.GetProductList();
+
+            for (int i = 0; i < cartItems.Count; i++)
+            {
+                if (!productList.Contains(cartItems[i].Item))
+                {
+                    return false;
+                }
+            }
+            
+            return true;
         }
 
         public double GetTotalAmount()

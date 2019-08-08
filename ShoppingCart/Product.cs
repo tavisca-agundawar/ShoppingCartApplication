@@ -9,12 +9,12 @@ namespace ShoppingCart
 
         public double Price { get; private set; }
 
-        public Categories Category;     //{ get; private set; }
+        public Categories Category; 
         public Product(string name, double price, string category)
         {
             this.Name = name;
             this.Price = price;
-            Enum.TryParse<Categories>(category, out this.Category);
+            Enum.TryParse(category, out this.Category);
         }
 
 

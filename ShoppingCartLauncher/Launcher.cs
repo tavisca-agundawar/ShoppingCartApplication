@@ -38,26 +38,30 @@ namespace ShoppingCartLauncher
                             {
                                 case 1:
                                     Vendor.AddProduct();
-                                    Display.ShowMessage("Product Added!");
                                     break;
-
                                 case 2:
-                                    Vendor.SetCartWideDiscount();
+                                    Vendor.RemoveProduct();
                                     Display.ShowMessage("Discount Set!");
                                     break;
 
                                 case 3:
-                                    Vendor.SetCategoryDiscount();
+                                    Vendor.SetCartWideDiscount();
+                                    Display.ShowMessage("Discount Set!");
                                     break;
 
                                 case 4:
+                                    Vendor.SetCategoryDiscount();
+                                    Display.ShowMessage("Discount Set!");
+                                    break;
+
+                                case 5:
                                     Discount.ShowCategorialDiscountValues();
                                     break;
-                                case 5:
+                                case 6:
                                     Products.ShowAllProducts();
                                     break;
 
-                                case 6:
+                                case 7:
                                     exitVendorMenu = true;
                                     break;
 
@@ -148,11 +152,12 @@ namespace ShoppingCartLauncher
             Display.ShowMessagePretty("\t\t Vendor Menu");
             Display.ShowMessage("Choose an option from the following:");
             Display.ShowMessage("1.Add product");
-            Display.ShowMessage("2.Set fixed discount");
-            Display.ShowMessage("3.Set Category Discount");
-            Display.ShowMessage("4.Show discount per category");
-            Display.ShowMessage("5.Show list of products");
-            Display.ShowMessage("6.Return to Main Menu");
+            Display.ShowMessage("2.Remove product");
+            Display.ShowMessage("3.Set fixed discount");
+            Display.ShowMessage("4.Set Category Discount");
+            Display.ShowMessage("5.Show discount per category");
+            Display.ShowMessage("6.Show list of products");
+            Display.ShowMessage("7.Return to Main Menu");
         }
 
         public static void ShowShopperMenu()

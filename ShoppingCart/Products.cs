@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace ShoppingCart
@@ -7,22 +8,40 @@ namespace ShoppingCart
     {
         private static List<Product> _list = new List<Product>();
 
+        public static List<Product> GetProductList()
+        {
+            return _list;
+        }
+
         public static void AddProductToList(Product product)
         {
             _list.Add(product);
+        }
+        public static void RemoveProductFromList(Product product)
+        {
+            if(_list.Remove(_list.Find(x => x.Name == product.Name)))
+            {
+                Display.ShowMessage("Product Removed!");
+            }
+            else
+            {
+                Display.ShowMessage("Error! Product not found!");
+            }
         }
 
         public static Product GetProductByName(string productName)
         {
             if (_list.Count > 0)
             {
-                foreach (var product in _list)
-                {
-                    if (product.Name.Equals(productName))
-                    {
-                        return product;
-                    }
-                }
+
+                return _list.Find(x => x.Name == productName);
+                //foreach (var product in _list)
+                //{
+                //    if (product.Name.Equals(productName))
+                //    {
+                //        return product;
+                //    }
+                //}
             }
             else
             {

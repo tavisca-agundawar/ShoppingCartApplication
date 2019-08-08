@@ -10,7 +10,22 @@ namespace ShoppingCart
             double price = Convert.ToDouble(Display.GetInputFromUser("Enter product price:"));
             string category = GetCategoryFromUser();
 
-            Products.AddProductToList(new Product(name,price,category));
+            if(Products.GetProductByName(name) != null)
+            {
+                Display.ShowMessage("Error! Product with same name already exists!");
+            }
+            else
+            {
+                Products.AddProductToList(new Product(name, price, category));
+                Display.ShowMessage("Product Added!");
+            }
+        }
+
+        public static void RemoveProduct()
+        {
+            Products.ShowAllProducts();
+            var name = Display.GetInputFromUserPretty("Enter name of product to delete: ");
+            Products.RemoveProductFromList(new Product(name, 0, ""));
         }
 
         private static string GetCategoryFromUser()
@@ -42,7 +57,6 @@ namespace ShoppingCart
             {
                 Discount.CategorialDiscount.Add(chosenCategoryName, discount);
             }
-
         }
 
         public static void SetCartWideDiscount()
